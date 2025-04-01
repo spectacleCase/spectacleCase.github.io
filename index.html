@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郑耿造 - 个人简介</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #3498db;
+            --secondary: #9b59b6;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .floating-icons {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .floating-icons i {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.15);
+            animation: float linear infinite;
+            font-size: 24px;
+        }
+        
+        @keyframes float {
+            to {
+                transform: translateY(-100vh) rotate(360deg);
+            }
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(5px);
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            color: var(--dark);
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 2.5em;
+            position: relative;
+            font-weight: 700;
+        }
+        
+        h1::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        h2 {
+            color: var(--primary);
+            border-left: 4px solid var(--secondary);
+            padding-left: 15px;
+            margin-top: 30px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--primary), transparent);
+            margin: 25px 0;
+            opacity: 0.5;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--light);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: block;
+            margin: 25px auto;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
+        }
+        
+        .profile-img::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                transparent, transparent, transparent,
+                rgba(255, 255, 255, 0.3), transparent, transparent
+            );
+            transform: rotate(30deg);
+            transition: all 0.5s ease;
+        }
+        
+        .profile-img:hover::before {
+            transform: rotate(30deg) translate(20%, 20%);
+        }
+        
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+            font-weight: 300;
+        }
+        
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        a::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--secondary);
+        }
+        
+        a:hover::after {
+            width: 100%;
+        }
+        
+        ins {
+            background-color: #f8f4c4;
+            text-decoration: none;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 400;
+        }
+        
+        .achievement {
+            background-color: rgba(52, 152, 219, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .achievement:hover {
+            transform: translateX(10px);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-proof {
+            font-style: italic;
+            color: #7f8c8d;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(236, 240, 241, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-proof::before {
+            content: """;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 60px;
+            color: rgba(52, 152, 219, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .social-proof::after {
+            content: """;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 60px;
+            color: rgba(52, 152, 219, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .tech-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .tech-icon {
+            font-size: 2.5rem;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+        
+        .tech-icon:hover {
+            color: var(--primary);
+            transform: translateY(-5px) scale(1.2);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-icons" id="floatingIcons"></div>
+    
+    <div class="container">
+        <h1>郑耿造 <i class="fas fa-star pulse" style="color: gold; font-size: 0.8em;"></i></h1>
+        <hr>
+        <img src="https://www.helloimg.com/i/2025/04/01/67eb4b72e3f3c.png" alt="个人照片" class="profile-img" title="郑耿造">
+        
+        <div class="tech-icons">
+            <i class="fab fa-linux tech-icon" title="Linux"></i>
+            <i class="fas fa-microchip tech-icon" title="嵌入式"></i>
+            <i class="fab fa-ubuntu tech-icon" title="Ubuntu"></i>
+            <i class="fas fa-code tech-icon" title="编程"></i>
+            <i class="fas fa-robot tech-icon" title="ARM"></i>
+        </div>
+        
+        <p>先说我自己，目前已经在<a href="https://www.zhihu.com/question/363983243" target="_blank">嵌入式</a>行业发展了12个年头，开发过很多嵌入式产品，
+            从<a href="https://baike.baidu.com/item/%E5%8D%95%E7%89%87%E6%9C%BA/102396" target="_blank">单片机</a>到 <a href="https://baike.baidu.com/item/arm/7518299" target="_blank">ARM</a>,
+            从裸机到<a href="https://baike.baidu.com/item/Linux/27050" target="_blank">Linux</a>，应该来说是经历了整个嵌入式行业近10年来的技术迭代,
+            自己也从大学刚毕业的小白,到现在能够独挡一面，我的经历应该可以给所有想入行的小伙伴一些参考，
+            因为我觉得每个做技术的下伙伴都有一颗做大佬的心，下面是我总结出来的嵌入式行业大佬的必经之路。
+        </p>
+        
+        <h2><i class="fas fa-graduation-cap"></i> 学习经历</h2>
+        <p>主要做桌面或工业软件：主流为Linux上应用开发（QT等），同时 Qt 具备跨平台特性，目前薪资水平不错。</p>
+        
+        <h2><i class="fas fa-trophy"></i> 主要成就</h2>
+        <div class="achievement">
+            <p><ins>智商没有人高，四肢走路，高兴就甩尾巴，害怕就夹尾巴，</ins>鼻子灵敏，嗅觉特别灵敏，怯弱胆小</p>
+            <p><i class="fas fa-award" style="color: var(--accent);"></i> 2025年，获评717最佳可爱小狗奖</p>
+        </div>
+        
+        <h2><i class="fas fa-brain"></i> 社会认知</h2>
+        <div class="social-proof">
+            <p>认知水平大约相当于一个3到5岁的人类小孩。当我们指向某个东西时，狗狗会知道我们在尝试给他们展示一些东西。它们可以评估哪个狗碗里的粮食比较多，会回应熟悉的声音，擅长辨别友善或敌对的人。还有很多的狗狗主人说，
+                他们的狗可以被训练在每天的固定时间吃饭和外遛玩耍。</p>
+        </div>
+    </div>
+
+    <script>
+        // 创建浮动图标
+        function createFloatingIcons() {
+            const container = document.getElementById('floatingIcons');
+            const icons = [
+                'fa-microchip', 'fa-code', 'fa-robot', 'fa-laptop-code', 
+                'fa-terminal', 'fa-bug', 'fa-cog', 'fa-server',
+                'fa-memory', 'fa-microscope', 'fa-bolt', 'fa-atom'
+            ];
+            
+            for (let i = 0; i < 30; i++) {
+                const icon = document.createElement('i');
+                icon.className = `fas ${icons[Math.floor(Math.random() * icons.length)]}`;
+                
+                // 随机位置
+                icon.style.left = `${Math.random() * 100}vw`;
+                icon.style.top = `${Math.random() * 100}vh`;
+                
+                // 随机动画时间和延迟
+                const duration = 10 + Math.random() * 20;
+                const delay = Math.random() * 5;
+                icon.style.animationDuration = `${duration}s`;
+                icon.style.animationDelay = `${delay}s`;
+                
+                // 随机大小
+                const size = 10 + Math.random() * 30;
+                icon.style.fontSize = `${size}px`;
+                
+                container.appendChild(icon);
+            }
+        }
+        
+        // 页面加载后执行
+        window.addEventListener('load', () => {
+            createFloatingIcons();
+            
+            // 为每个段落添加打字机效果
+            const paragraphs = document.querySelectorAll('p');
+            paragraphs.forEach(p => {
+                const originalText = p.textContent;
+                p.textContent = '';
+                
+                let i = 0;
+                const typing = setInterval(() => {
+                    if (i < originalText.length) {
+                        p.textContent += originalText.charAt(i);
+                        i++;
+                    } else {
+                        clearInterval(typing);
+                    }
+                }, 10);
+            });
+        });
+    </script>
+</body>
+</html>
