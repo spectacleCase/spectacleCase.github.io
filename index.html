@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>郑耿造 - 个人简介</title>
+    <title>桌角的眼镜</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -276,6 +276,55 @@
             100% { transform: scale(1); }
         }
         
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .experience-item {
+            margin-bottom: 30px;
+        }
+        
+        .experience-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .experience-company {
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        .experience-date {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        .experience-desc {
+            margin-top: 10px;
+        }
+        
+        .responsibility-list {
+            margin-left: 20px;
+        }
+        
+        .responsibility-item {
+            margin-bottom: 8px;
+        }
+        
+        .project-link {
+            display: inline-block;
+            margin-top: 5px;
+        }
+        
         @media (max-width: 768px) {
             .container {
                 margin: 20px;
@@ -290,6 +339,12 @@
                 width: 150px;
                 height: 150px;
             }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -297,38 +352,128 @@
     <div class="floating-icons" id="floatingIcons"></div>
     
     <div class="container">
-        <h1>郑耿造 <i class="fas fa-star pulse" style="color: gold; font-size: 0.8em;"></i></h1>
+        
         <hr>
-        <img src="https://www.helloimg.com/i/2025/04/01/67eb4b72e3f3c.png" alt="个人照片" class="profile-img" title="郑耿造">
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>2517509902@qq.com</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>18875991125</span>
+            </div>
+        </div>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fab fa-github"></i>
+                <a href="https://github.com/spectacleCase" target="_blank">github.com/spectacleCase</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-gitlab"></i>
+                <a href="https://gitee.com/lzt_luo" target="_blank">gitee.com/lzt_luo</a>
+            </div>
+        </div>
         
         <div class="tech-icons">
+            <i class="fab fa-java tech-icon" title="Java"></i>
+            <i class="fab fa-golang tech-icon" title="Golang"></i>
+            <i class="fas fa-database tech-icon" title="数据库"></i>
             <i class="fab fa-linux tech-icon" title="Linux"></i>
-            <i class="fas fa-microchip tech-icon" title="嵌入式"></i>
-            <i class="fab fa-ubuntu tech-icon" title="Ubuntu"></i>
-            <i class="fas fa-code tech-icon" title="编程"></i>
-            <i class="fas fa-robot tech-icon" title="ARM"></i>
+            <i class="fab fa-docker tech-icon" title="Docker"></i>
+            <i class="fas fa-server tech-icon" title="后端开发"></i>
         </div>
         
-        <p>先说我自己，目前已经在<a href="https://www.zhihu.com/question/363983243" target="_blank">嵌入式</a>行业发展了12个年头，开发过很多嵌入式产品，
-            从<a href="https://baike.baidu.com/item/%E5%8D%95%E7%89%87%E6%9C%BA/102396" target="_blank">单片机</a>到 <a href="https://baike.baidu.com/item/arm/7518299" target="_blank">ARM</a>,
-            从裸机到<a href="https://baike.baidu.com/item/Linux/27050" target="_blank">Linux</a>，应该来说是经历了整个嵌入式行业近10年来的技术迭代,
-            自己也从大学刚毕业的小白,到现在能够独挡一面，我的经历应该可以给所有想入行的小伙伴一些参考，
-            因为我觉得每个做技术的下伙伴都有一颗做大佬的心，下面是我总结出来的嵌入式行业大佬的必经之路。
-        </p>
+        <h2><i class="fas fa-briefcase"></i> 实习经历</h2>
         
-        <h2><i class="fas fa-graduation-cap"></i> 学习经历</h2>
-        <p>主要做桌面或工业软件：主流为Linux上应用开发（QT等），同时 Qt 具备跨平台特性，目前薪资水平不错。</p>
-        
-        <h2><i class="fas fa-trophy"></i> 主要成就</h2>
-        <div class="achievement">
-            <p><ins>智商没有人高，四肢走路，高兴就甩尾巴，害怕就夹尾巴，</ins>鼻子灵敏，嗅觉特别灵敏，怯弱胆小</p>
-            <p><i class="fas fa-award" style="color: var(--accent);"></i> 2025年，获评717最佳可爱小狗奖</p>
+        <div class="experience-item">
+            <div class="experience-title">
+                <span class="experience-company">广东茂晟科技有限公司</span> - <span>后端开发</span>
+                <span class="experience-date">2024.6 - 2024.9</span>
+            </div>
+            <div class="experience-desc">
+                <p>项目：茂名市计算机信息网络安全协会H5小程序开发</p>
+                <a href="http://h5.mmcsa.cn/#" target="_blank" class="project-link">项目链接</a>
+                <ul class="responsibility-list">
+                    <li class="responsibility-item">采用JSON Schema结合FormCreate实现动态表单设计，支持活动功能流程的创建、审批、查询等功能，通过动态配置和规则引擎，减少配置时间30%，提升开发效率，同时支持表单字段的实时校验和动态渲染。</li>
+                    <li class="responsibility-item">结合HTTP断点续传机制，将文件分片通过MD5校验异步上传存储文件，上传时间减少30%提升用户体验。通过优化数据库查询和缓存机制，将活动流程查询的响应时间从400毫秒降低至200毫秒。</li>
+                    <li class="responsibility-item">会员功能开发：实现了会员注册、登录、信息管理及分级（如普通会员、VIP会员）功能，并开发会员风采展示模块，支持会员上传个人简介、照片等信息，提升会员互动性和参与感，提升20%的用户留存率。</li>
+                </ul>
+            </div>
         </div>
         
-        <h2><i class="fas fa-brain"></i> 社会认知</h2>
-        <div class="social-proof">
-            <p>认知水平大约相当于一个3到5岁的人类小孩。当我们指向某个东西时，狗狗会知道我们在尝试给他们展示一些东西。它们可以评估哪个狗碗里的粮食比较多，会回应熟悉的声音，擅长辨别友善或敌对的人。还有很多的狗狗主人说，
-                他们的狗可以被训练在每天的固定时间吃饭和外遛玩耍。</p>
+        <div class="experience-item">
+            <div class="experience-title">
+                <span class="experience-company">茂名口袋马克网络服务有限责任公司</span> - <span>后端开发</span>
+                <span class="experience-date">2024.11 - 2025.2</span>
+            </div>
+            <div class="experience-desc">
+                <p>项目：微信搜索we校园</p>
+                <ul class="responsibility-list">
+                    <li class="responsibility-item">使用策略模式，搭建爬虫架构，对正方、强智等教务系统进行JS逆向，实现获取成绩与课表信息，完成用户从15到18W的增长，并使用PostHog监控各学校增长和使用率。</li>
+                    <li class="responsibility-item">设计并实现帖子付费置顶，上线后商入驻率提升25%，借此开发多商户管理，贡献10%的额外收入。</li>
+                    <li class="responsibility-item">设计并实现课程评价，使用segmentit，ai，mongodb实现恶意评论过滤，过滤效果达到95%，响应速度从1.8s提升到400ms。</li>
+                    <li class="responsibility-item">使用Mongodb和爬虫异步+同步存储库，从而提高用户获取信息速度和安全性(2秒降到200毫秒提升)。</li>
+                    <li class="responsibility-item">对一些高并发数据比如用户信息，学校获取使用go-cache、Redis、Mysql三级缓存,从200ms到120ms的延迟降低。</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2><i class="fas fa-project-diagram"></i> 项目经历</h2>
+        
+        <div class="experience-item">
+            <div class="experience-title">
+                <span>WeAI</span> - <span>后端开发</span>
+                <span class="experience-date">2024.4 - 至今</span>
+            </div>
+            <div class="experience-desc">
+                <p>新一代AI多智能体应用平台，提供文章生成、PPT生成和AI搜索等交互体验,旨在改变传统AI交互模式。用户无需构建长、专业的提示词，仅通过一句话就可以识别语义响应想要结果。目前2K用户，该项目获得中国大学生计算机设计大赛二等奖</p>
+                <a href="http://wegc.cn/#/pages/Chat/index" target="_blank" class="project-link">项目链接</a>
+                <ul class="responsibility-list">
+                    <li class="responsibility-item">对话记忆机制优化：WeAI引入了先进的ConversationSummaryMemory记忆机制，专门针对长对话场景进行了优化。该机制不仅提升了对话性能，还显著降低了成本，同时确保聊天记录的完整保存，为用户提供更实、一致的交互体验。</li>
+                    <li class="responsibility-item">类流传输，利用MongoDB作为AI端和go端的信息交互，提高开发效率约40%，解决了高并发带来的一些问题，配合前端Http控制实现了类似于流传输的功能。</li>
+                    <li class="responsibility-item">通用模块：负责附件存储服务的开发，基于策略模式，结合动态配置表，动态切换存储策略，实现MinIO远程存储策略和本地存储策略两种方案。</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="experience-item">
+            <div class="experience-title">
+                <span>无人巡航者</span> - <span>后端开发</span>
+                <span class="experience-date">2024.03 - 至今</span>
+            </div>
+            <div class="experience-desc">
+                <p>挑战杯国家级项目立项，攀登计划立项</p>
+                <p>"无人巡航者"是一个国家级的智能火灾监测和灭火项目，它通过无人小车和无人机的配合工作来提高火灾应对的效果。系统使用视觉和温度传感器，加上volo算法，来准确识别火灾，然后指挥无人机快速定位并灭火。</p>
+                <ul class="responsibility-list">
+                    <li class="responsibility-item">实现socket的多管理和断开心跳自动连接功能，前端结合roslib显示二维小车可视化和操作。</li>
+                    <li class="responsibility-item">利用中间件+loki+promtail+grafana收集用户的操作记录，系统日志，显示面板。</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2><i class="fas fa-code"></i> 专业技能</h2>
+        <ul class="responsibility-list">
+            <li class="responsibility-item">熟练掌握Java和Go以及面向对象设计思想，了解各个设计模式的结构和使用，了解JVM的内存模型，垃圾回收机制。了解使用Python、JavaScript等语言</li>
+            <li class="responsibility-item">熟练掌握Gin、Gorm,SpringBoot,Mybatis-plus,SpringCloud,SpringAl。对IOC和AOP，三级缓存机制有一定研究</li>
+            <li class="responsibility-item">熟悉Nginx配置，了解Linux常用命令以及项目部署</li>
+            <li class="responsibility-item">熟悉MySQL、Redis、Elasticsearch、Pgsql、熟练使用RabbitMq、Nacos。了解InnoDB索引。</li>
+            <li class="responsibility-item">了解HTML,CSS,JavaScript，能够进行Vue，微信小程序相关开发。</li>
+            <li class="responsibility-item">良好的沟通和团队协作能力，熟练使用Git进行团队协作</li>
+        </ul>
+        
+        <h2><i class="fas fa-graduation-cap"></i> 教育经历</h2>
+        <div class="experience-item">
+            <div class="experience-title">
+                <span class="experience-company">广东石油化工学院</span> - <span>人工智能专业</span>
+                <span class="experience-date">2022年6月 - 2026年6月</span>
+            </div>
+            <ul class="responsibility-list">
+                <li class="responsibility-item">荣誉：国家励志奖学金，综测奖学金，三好学生</li>
+                <li class="responsibility-item">成就：第三届"创客茂名"大赛创客组三等奖，中国大学生计算机设计大赛二等奖</li>
+            </ul>
         </div>
     </div>
 
@@ -339,7 +484,8 @@
             const icons = [
                 'fa-microchip', 'fa-code', 'fa-robot', 'fa-laptop-code', 
                 'fa-terminal', 'fa-bug', 'fa-cog', 'fa-server',
-                'fa-memory', 'fa-microscope', 'fa-bolt', 'fa-atom'
+                'fa-database', 'fa-microscope', 'fa-bolt', 'fa-atom',
+                'fa-java', 'fa-git-alt', 'fa-js', 'fa-python'
             ];
             
             for (let i = 0; i < 30; i++) {
@@ -367,23 +513,6 @@
         // 页面加载后执行
         window.addEventListener('load', () => {
             createFloatingIcons();
-            
-            // 为每个段落添加打字机效果
-            const paragraphs = document.querySelectorAll('p');
-            paragraphs.forEach(p => {
-                const originalText = p.textContent;
-                p.textContent = '';
-                
-                let i = 0;
-                const typing = setInterval(() => {
-                    if (i < originalText.length) {
-                        p.textContent += originalText.charAt(i);
-                        i++;
-                    } else {
-                        clearInterval(typing);
-                    }
-                }, 10);
-            });
         });
     </script>
 </body>
